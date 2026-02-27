@@ -51,7 +51,7 @@ git checkout <file> <commit>     # 将文件或者目录检出（覆盖）为指
 
 git checkout --force/-f <file>   # **高危** 效果同上，--force 或者 -f 代表强制操作
 
-git clean                        # **高危** 清理工作区中的 untracked 文件，需要配合参数使用：-f 清理文件，-d 清理文									 件夹，-x 清理原因 .gitignore 被忽略的目录
+git clean                        # **高危** 清理工作区中的 untracked 文件，需要配合参数使用：-f 清理文件，-d 清理文件夹，-x 清理原因 .gitignore 被忽略的目录
 ~~~
 
 
@@ -131,8 +131,8 @@ git push origin <ref_name> -d                   # **高危** 删除远端 ref
 
 git push origin <ref_name> -f/--force           # **高危** 强制覆盖远端 ref
 
-git push origin <ref_name> --force-with-lease   # **高危** 效果同上，但更安全一些：推送之前会先检查远端的目标分支												commit跟本地下载的是否一致，不一致则push失败。这时需要执行git 													fetch更新本地版本，fetch后最好人工确认新版本要不要继续执行强制覆盖																
-git push --mirror                               # **高危** 将比较本地和远端的差异，推送成功后，远端版本库将与本地保												 持一致，使用不当可能导致大量分支历史丢失，只建议bare版本库同步时使用
+git push origin <ref_name> --force-with-lease   # **高危** 效果同上，但更安全一些：推送之前会先检查远端的目标分支commit跟本地下载的是否一致，不一致则push失败。这时需要执行 git fetch 更新本地版本，fetch后最好人工确认新版本要不要继续执行强制覆盖																
+git push --mirror                               # **高危** 将比较本地和远端的差异，推送成功后，远端版本库将与本地保持一致，使用不当可能导致大量分支历史丢失，只建议bare版本库同步时使用
 ~~~
 
 
